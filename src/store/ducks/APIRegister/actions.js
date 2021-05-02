@@ -12,7 +12,7 @@ const receivedData = (result) => {
 const failedRequest = (error) => {
   return { type: TasksTypes.FAILED_REQUEST, resp: error };
 };
-export default function handleAsync(email, password, displayName) {
+export default function handleAsyncRegister(email, password, displayName) {
   return async (dispatch) => {
     try {
       dispatch(requestingData());

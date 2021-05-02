@@ -1,6 +1,7 @@
 import React from "react";
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const socket = io("http://localhost:3002");
 
@@ -12,5 +13,12 @@ export default function Login() {
     });
     socket.emit("emit-test", { msg: "mensageme enviada do cliente" });
   }, []);
-  return <div>login {messag}</div>;
+  return (
+    <div>
+      <input type="email" placeholder="password" />
+      <input type="password" placeholder="password" />
+      <button>Fazer login</button>
+      <Link to="/register"> Registrar</Link>
+    </div>
+  );
 }
